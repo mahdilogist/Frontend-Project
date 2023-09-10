@@ -1,10 +1,11 @@
 "use client";
-import { Data } from "@/utils/data";
+import { useSelector } from "react-redux";
 import Image from "next/image";
 import Link from "next/link";
 
 function ProductDetails({ params }) {
-  const product = Data.products[params.id].details;
+  const { products } = useSelector((state) => state);
+  const product = products[params.id].details;
   // console.log(product)
   return (
     <div className="lg:flex lg:justify-evenly lg:gap-x-64 p-10 bg-neutral-800 h-fit text-white  ">
